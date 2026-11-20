@@ -1,0 +1,539 @@
+
+/* =========================================
+   SHARED SECTION HEADINGS
+========================================= */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-heading a {
+  color: var(--color-ink);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.section-heading a:hover {
+  color: #B18B00;
+}
+
+/* =========================================
+   FEATURED PROJECTS
+========================================= */
+
+.featured-projects {
+  background: var(--color-gold, #F4C542);
+}
+
+.featured-projects .section-heading {
+  margin: 20px 0;
+}
+
+.featured-projects .section-heading h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+}
+
+.view-all-link {
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-gold);
+  font-size: 14px;
+}
+
+.projects-intro {
+  max-width: 550px;
+  margin: 0 0 48px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   PROJECT GRID
+========================================= */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px;
+  margin-top: 35px;
+}
+
+.project-card {
+  min-width: 0;
+}
+
+/* =========================================
+   PROJECT VISUAL
+========================================= */
+
+.project-visual {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  min-height: 360px;
+  padding: 24px;
+  overflow: hidden;
+
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+  text-decoration: none;
+
+  transition: transform 0.25s ease;
+}
+
+.project-visual:hover {
+  transform: translateY(-5px);
+}
+
+/* Dental Clinic */
+
+.project-visual--dental {
+  background: #DCECE7;
+  color: #183F3B;
+}
+
+/* Smart Classroom */
+
+.project-visual--classroom {
+  background: #E7E3FA;
+  color: #29254D;
+}
+
+/* Visual top and bottom labels */
+
+.project-visual__top,
+.project-visual__bottom {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.project-visual__top span:last-child {
+  font-size: 22px;
+  line-height: 1;
+}
+
+/* Center typography */
+
+.project-visual__center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-align: center;
+}
+
+.project-visual__symbol {
+  margin-bottom: 12px;
+  font-size: 42px;
+}
+
+.project-visual__center strong {
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 5vw, 70px);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.06em;
+}
+
+.project-visual__center > span:last-child {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+/* =========================================
+   PROJECT DETAILS
+========================================= */
+
+.project-details {
+  padding: 26px 0 0;
+}
+
+.project-details__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.project-details__heading h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.04em;
+}
+
+.project-details__heading a {
+  color: var(--color-ink);
+  font-size: 25px;
+  text-decoration: none;
+}
+
+.project-details > p {
+  margin: 16px 0 22px;
+  color: var(--color-muted);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+/* Technology tags */
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.project-tags span {
+  padding: 7px 12px;
+  border: 1px solid #D5D5D5;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+/* Project link */
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--color-gold);
+
+  color: var(--color-ink);
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+
+  transition: gap 0.2s ease;
+}
+
+.project-link:hover {
+  gap: 18px;
+}
+
+/* =========================================
+   LEGACY PROJECT STYLES
+   Used by other pages if needed
+========================================= */
+
+.project-art {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  background: #E7D08A;
+  font: 600 14px var(--font-mono);
+  letter-spacing: 0.13em;
+}
+
+.project-art-alt {
+  background: #D9D9D4;
+}
+
+.project-copy {
+  padding: 24px;
+}
+
+.project-copy h3,
+.project-copy h2 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.project-copy p {
+  color: var(--color-muted);
+}
+
+.project-copy span {
+  font: 12px var(--font-mono);
+}
+
+/* =========================================
+   SERVICES / WHAT I DO
+========================================= */
+
+.section-tinted {
+  background: #F1EEE6;
+}
+
+.three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.three-grid article {
+  padding-top: 25px;
+  border-top: 3px solid var(--color-ink);
+}
+
+.three-grid p {
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/* =========================================
+   INNER PAGE INTRO
+========================================= */
+
+.page-intro {
+  min-height: 55vh;
+}
+
+.page-intro h1 {
+  margin: 25px 0;
+  font-size: clamp(52px, 8vw, 110px);
+}
+
+.page-intro .section-intro {
+  margin-bottom: 35px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .project-grid {
+    gap: 24px;
+  }
+
+  .project-visual {
+    min-height: 300px;
+    padding: 20px;
+  }
+
+  .three-grid {
+    gap: 22px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .project-grid,
+  .three-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .project-grid {
+    gap: 48px;
+  }
+
+  .project-visual {
+    min-height: 320px;
+  }
+
+  .projects-intro {
+    margin-bottom: 32px;
+  }
+
+  .project-details__heading h3 {
+    font-size: 24px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-visual,
+  .project-link {
+    transition: none;
+  }
+}
+
+
+
+
+
+/* =========================================
+   SERVICES / SKILLS PREVIEW
+========================================= */
+
+.services-section .section-heading {
+  margin: 20px 0;
+}
+
+.services-section .section-heading h2 {
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+}
+
+.services-view-all {
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-gold);
+  font-size: 14px;
+}
+
+.services-intro {
+  max-width: 620px;
+  margin: 0 0 48px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Cards */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 42px;
+
+  min-height: 370px;
+  padding: 28px;
+
+  background: var(--color-paper);
+  border: 1px solid var(--color-ink);
+  color: var(--color-ink);
+  text-decoration: none;
+
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.service-card:hover {
+  background: var(--color-gold);
+  transform: translateY(-5px);
+  box-shadow: 6px 6px 0 var(--color-ink);
+}
+
+.service-card__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.service-card__arrow {
+  font-size: 24px;
+  line-height: 1;
+}
+
+.service-card h3 {
+  margin: 0 0 18px;
+  font-family: var(--font-heading);
+  font-size: clamp(27px, 2.7vw, 38px);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.service-card p {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.service-card:hover p {
+  color: var(--color-ink);
+}
+
+.service-card__tags {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1.8;
+  letter-spacing: 0.04em;
+}
+
+/* Keyboard accessibility */
+
+.service-card:focus-visible {
+  outline: 3px solid var(--color-ink);
+  outline-offset: 4px;
+}
+
+/* Responsive */
+
+@media (max-width: 900px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card {
+    min-height: 300px;
+    padding: 24px;
+    gap: 32px;
+  }
+
+  .services-intro {
+    margin-bottom: 32px;
+    font-size: 15px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card {
+    transition: none;
+  }
+}
+
+
+/* Yellow highlight behind heading only */
+
+.services-section #services-heading {
+  display: inline;
+  background: linear-gradient(
+    transparent 55%,
+    var(--color-gold, #F4C542) 55%
+  );
+  padding: 0 4px;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+

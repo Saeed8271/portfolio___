@@ -1,0 +1,247 @@
+
+/* =========================================
+   ABOUT PREVIEW SECTION
+========================================= */
+
+.about-preview {
+  background: var(--color-paper, #FAF9F6);
+  overflow: hidden;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(48px, 7vw, 100px);
+}
+
+/* =========================================
+   LEFT — HEADING
+========================================= */
+
+.about-grid > div:first-child {
+  min-width: 0;
+}
+
+.about-grid .eyebrow {
+  margin: 0 0 24px;
+  color: var(--color-muted, #666666);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+}
+
+.about-grid h2 {
+  margin: 0;
+  color: var(--color-ink, #171717);
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 5.5vw, 82px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+}
+
+/* Golden accent rule */
+
+.gold-rule {
+  width: 80px;
+  height: 5px;
+  margin: 32px 0 52px;
+  background: var(--color-gold, #F4C542);
+}
+
+/* =========================================
+   DESIGN / DEVELOP / DEPLOY CARD
+========================================= */
+
+.design-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 36px;
+
+  width: calc(100% - 14px);
+  max-width: 420px;
+  min-height: 330px;
+  padding: clamp(24px, 3vw, 36px);
+
+  background: var(--color-gold, #F4C542);
+  border: 2px solid var(--color-ink, #171717);
+  box-shadow: 12px 12px 0 var(--color-ink, #171717);
+}
+
+.design-card small {
+  display: block;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+}
+
+.design-card strong {
+  display: block;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 3.7vw, 54px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   RIGHT — PERSONAL STORY
+========================================= */
+
+.about-story {
+  min-width: 0;
+  padding-top: 46px;
+}
+
+.about-story .lead {
+  margin: 0 0 28px;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+}
+
+.about-story > p:not(.lead) {
+  margin: 0 0 38px;
+  max-width: 520px;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+/* =========================================
+   MILESTONES
+========================================= */
+
+.milestone {
+  padding: 22px 0;
+  border-top: 1px solid #D1D1D1;
+}
+
+.milestone b {
+  display: block;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.milestone p {
+  margin: 8px 0 0;
+  color: var(--color-muted);
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   ABOUT BUTTON
+========================================= */
+
+.about-story .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 28px;
+  min-height: 48px;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.about-story .button:hover {
+  transform: translateY(-3px);
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .about-grid h2 {
+    font-size: clamp(48px, 8vw, 72px);
+  }
+
+  .about-story {
+    padding-top: 0;
+  }
+
+  .design-card {
+    max-width: 420px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .about-grid {
+    gap: 52px;
+  }
+
+  .about-grid .eyebrow {
+    font-size: 10px;
+    margin-bottom: 20px;
+  }
+
+  .about-grid h2 {
+    font-size: clamp(44px, 11vw, 60px);
+  }
+
+  .gold-rule {
+    width: 65px;
+    height: 4px;
+    margin: 26px 0 40px;
+  }
+
+  .design-card {
+    min-height: 280px;
+    padding: 26px;
+    gap: 24px;
+    box-shadow: 8px 8px 0 var(--color-ink);
+  }
+
+  .design-card strong {
+    font-size: clamp(30px, 9vw, 44px);
+  }
+
+  .design-card small {
+    font-size: 10px;
+  }
+
+  .about-story .lead {
+    font-size: 25px;
+  }
+
+  .about-story > p:not(.lead) {
+    font-size: 15px;
+    margin-bottom: 30px;
+  }
+
+  .milestone {
+    padding: 20px 0;
+  }
+
+  .about-story .button {
+    margin-top: 24px;
+  }
+}
