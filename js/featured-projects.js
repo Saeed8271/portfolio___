@@ -210,12 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     /*
-      Desktop: 2 projects visible.
-      Mobile: 1 project visible.
-
-      With only 2 projects, desktop arrows
-      remain disabled because both cards
-      are already visible.
+       Desktop: 2 projects visible.
+       Mobile: 1 project visible.
     */
 
     const getVisibleCount = () => {
@@ -239,8 +235,8 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     /*
-      Calculate the current project using
-      the carousel's actual scroll position.
+       Calculate current project using
+       actual carousel scroll position.
     */
 
     const getCurrentIndex = () => {
@@ -278,8 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     /*
-      Update arrow availability and
-      the project counter.
+       Update carousel counter and arrows.
     */
 
     const updateNavigation = () => {
@@ -313,8 +308,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     /*
-      Scroll to the requested project.
-      The browser handles smooth scrolling.
+       Scroll to requested project.
     */
 
     const scrollToProject = (index) => {
@@ -343,7 +337,7 @@ document.addEventListener("DOMContentLoaded", () => {
     };
 
     /*
-      Previous project
+       Previous project.
     */
 
     prevButton.addEventListener("click", () => {
@@ -355,7 +349,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*
-      Next project
+       Next project.
     */
 
     nextButton.addEventListener("click", () => {
@@ -367,8 +361,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*
-      Update the counter while swiping
-      or manually scrolling.
+       Update counter during manual scrolling.
     */
 
     carousel.addEventListener(
@@ -378,8 +371,7 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     /*
-      Recalculate layout when the
-      viewport size changes.
+       Recalculate on viewport resize.
     */
 
     let previousVisibleCount = getVisibleCount();
@@ -406,8 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     /*
-      Keyboard navigation when the
-      carousel itself has focus.
+       Keyboard carousel navigation.
     */
 
     carousel.addEventListener(
@@ -421,7 +412,6 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === "ArrowRight") {
 
           event.preventDefault();
-
           scrollToProject(currentIndex + 1);
 
         }
@@ -429,17 +419,12 @@ document.addEventListener("DOMContentLoaded", () => {
         if (event.key === "ArrowLeft") {
 
           event.preventDefault();
-
           scrollToProject(currentIndex - 1);
 
         }
 
       }
     );
-
-    /*
-      Initialize carousel navigation.
-    */
 
     updateNavigation();
 
@@ -452,16 +437,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const caseStudies = {
 
+    /* PROJECT 01 — S & I DENTAL CLINIC */
+
     dental: {
 
       modalId: "fp-dental-modal",
-
       imageId: "fp-modal-image",
-
       countId: "fp-image-count",
-
       prevId: "fp-image-prev",
-
       nextId: "fp-image-next",
 
       screenshots: [
@@ -485,16 +468,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
     },
 
+
+    /* PROJECT 02 — S S ENTERPRISES */
+
     enterprises: {
 
       modalId: "fp-enterprises-modal",
-
       imageId: "fp-enterprises-image",
-
       countId: "fp-enterprises-count",
-
       prevId: "fp-enterprises-prev",
-
       nextId: "fp-enterprises-next",
 
       screenshots: [
@@ -505,7 +487,7 @@ document.addEventListener("DOMContentLoaded", () => {
         },
 
         {
-          src: "images/projects/ss_enterprises/login.webp",
+          src: "images/projects/ss_enterprises/login_form.webp",
           alt: "S S Enterprises login interface"
         },
 
@@ -519,39 +501,68 @@ document.addEventListener("DOMContentLoaded", () => {
     },
 
 
-classroom: {
+    /* PROJECT 03 — SMART CLASSROOM */
 
-  modalId: "fp-classroom-modal",
+    classroom: {
 
-  imageId: "fp-classroom-image",
+      modalId: "fp-classroom-modal",
+      imageId: "fp-classroom-image",
+      countId: "fp-classroom-count",
+      prevId: "fp-classroom-prev",
+      nextId: "fp-classroom-next",
 
-  countId: "fp-classroom-count",
+      screenshots: [
 
-  prevId: "fp-classroom-prev",
+        {
+          src: "images/projects/smart_classroom/homepage.webp",
+          alt: "Smart Classroom homepage"
+        },
 
-  nextId: "fp-classroom-next",
+        {
+          src: "images/projects/smart_classroom/timetable.webp",
+          alt: "Smart Classroom timetable interface"
+        },
 
-  screenshots: [
+        {
+          src: "images/projects/smart_classroom/classroom.webp",
+          alt: "Smart Classroom classroom management interface"
+        }
 
-    {
-      src: "images/projects/smart_classroom/homepage.webp",
-      alt: "Smart Classroom homepage"
+      ]
+
     },
 
-    {
-      src: "images/projects/smart_classroom/timetable.webp",
-      alt: "Smart Classroom timetable interface"
-    },
 
-    {
-      src: "images/projects/smart_classroom/classroom.webp",
-      alt: "Smart Classroom classroom management interface"
+    /* PROJECT 04 — SHIFA DENTAL CLINIC */
+
+    shifa: {
+
+      modalId: "fp-shifa-modal",
+      imageId: "fp-shifa-image",
+      countId: "fp-shifa-count",
+      prevId: "fp-shifa-prev",
+      nextId: "fp-shifa-next",
+
+      screenshots: [
+
+        {
+          src: "images/projects/shifa_dental_clinic/homepage.webp",
+          alt: "Shifa Dental Clinic homepage"
+        },
+
+        {
+          src: "images/projects/shifa_dental_clinic/gallery.webp",
+          alt: "Shifa Dental Clinic photo gallery"
+        },
+
+        {
+          src: "images/projects/shifa_dental_clinic/services.webp",
+          alt: "Shifa Dental Clinic dental services"
+        }
+
+      ]
+
     }
-
-  ]
-
-}
-
 
   };
 
@@ -605,7 +616,7 @@ classroom: {
       let lastFocusedElement = null;
 
       /*
-        Update screenshot and image counter.
+         Update screenshot and counter.
       */
 
       const updateModalImage = () => {
@@ -625,8 +636,7 @@ classroom: {
       };
 
       /*
-        Move through modal screenshots.
-        Gallery navigation wraps around.
+         Navigate modal screenshots.
       */
 
       const changeModalImage = (direction) => {
@@ -653,7 +663,7 @@ classroom: {
       });
 
       /*
-        Open the correct case-study popup.
+         Open correct case-study modal.
       */
 
       const openButtons = document.querySelectorAll(
@@ -679,7 +689,7 @@ classroom: {
       });
 
       /*
-        Close buttons inside the modal.
+         Close buttons.
       */
 
       const closeButtons = modal.querySelectorAll(
@@ -695,7 +705,7 @@ classroom: {
       });
 
       /*
-        Close when clicking outside the dialog.
+         Close when clicking outside dialog.
       */
 
       modal.addEventListener("click", (event) => {
@@ -715,7 +725,7 @@ classroom: {
       });
 
       /*
-        Keyboard navigation inside the modal.
+         Keyboard gallery navigation.
       */
 
       modal.addEventListener("keydown", (event) => {
@@ -731,7 +741,6 @@ classroom: {
         if (event.key === "ArrowLeft") {
 
           event.preventDefault();
-
           changeModalImage(-1);
 
         }
@@ -739,20 +748,19 @@ classroom: {
         if (event.key === "ArrowRight") {
 
           event.preventDefault();
-
           changeModalImage(1);
 
         }
 
         /*
-          Escape is handled automatically
-          by the native dialog element.
+           Escape is handled automatically
+           by the native dialog element.
         */
 
       });
 
       /*
-        Restore keyboard focus after closing.
+         Restore focus after modal closes.
       */
 
       modal.addEventListener("close", () => {
@@ -772,7 +780,7 @@ classroom: {
       });
 
       /*
-        Initialize screenshot and counter.
+         Initialize modal gallery.
       */
 
       updateModalImage();
