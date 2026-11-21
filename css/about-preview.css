@@ -1,0 +1,376 @@
+
+/* =========================================
+   ABOUT PREVIEW SECTION
+========================================= */
+
+.about-preview {
+  background: var(--color-paper, #FAF9F6);
+  overflow: hidden;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: clamp(48px, 7vw, 100px);
+}
+
+/* =========================================
+   LEFT — HEADING
+========================================= */
+
+.about-grid > div:first-child {
+  min-width: 0;
+}
+
+.about-grid .eyebrow {
+  margin: 0 0 24px;
+  color: var(--color-muted, #666666);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+}
+
+.about-grid h2 {
+  margin: 0;
+  color: var(--color-ink, #171717);
+  font-family: var(--font-heading);
+  font-size: clamp(48px, 5.5vw, 82px);
+  font-weight: 700;
+  line-height: 1.04;
+  letter-spacing: -0.065em;
+}
+
+/* Golden accent rule */
+
+.gold-rule {
+  width: 80px;
+  height: 5px;
+  margin: 32px 0 52px;
+  background: var(--color-gold, #F4C542);
+}
+
+/* =========================================
+   DESIGN / DEVELOP / DEPLOY CARD
+========================================= */
+
+.design-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 36px;
+
+  width: calc(100% - 14px);
+  max-width: 420px;
+  min-height: 330px;
+  padding: clamp(24px, 3vw, 36px);
+
+  background: var(--color-gold, #F4C542);
+  border: 2px solid var(--color-ink, #171717);
+  box-shadow: 12px 12px 0 var(--color-ink, #171717);
+}
+
+.design-card small {
+  display: block;
+  color: var(--color-ink);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+}
+
+.design-card strong {
+  display: block;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: clamp(32px, 3.7vw, 54px);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.06em;
+  overflow-wrap: anywhere;
+}
+
+/* =========================================
+   RIGHT — ABOUT CONTENT
+========================================= */
+
+.about-story {
+  min-width: 0;
+  padding-top: 46px;
+}
+
+.about-story .lead {
+  margin: 0 0 28px;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.6vw, 34px);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.035em;
+}
+
+.about-story > p:not(.lead) {
+  margin: 0 0 44px;
+  max-width: 540px;
+  color: #3D3D3D;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.9;
+}
+
+/* Golden highlight on key phrases */
+
+.hl {
+  background: linear-gradient(
+    transparent 58%,
+    var(--color-gold, #F4C542) 58%
+  );
+  padding: 0 3px;
+  font-weight: 600;
+  color: var(--color-ink);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
+/* =========================================
+   MILESTONES — VERTICAL TIMELINE
+========================================= */
+
+.story-timeline {
+  --tl: 1;
+  position: relative;
+  margin: 0;
+  padding: 0 0 0 40px;
+  list-style: none;
+}
+
+/* Timeline track and progress fill */
+
+.story-timeline::before,
+.story-timeline::after {
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 34px;
+  bottom: 34px;
+  width: 2px;
+}
+
+.story-timeline::before {
+  background: #D1D1D1;
+}
+
+.story-timeline::after {
+  background: var(--color-ink);
+  transform: scaleY(var(--tl));
+  transform-origin: top;
+}
+
+/* Individual milestones */
+
+.milestone {
+  position: relative;
+  padding: 22px 0;
+}
+
+.milestone + .milestone {
+  border-top: 0;
+}
+
+/* Square timeline markers */
+
+.milestone::before {
+  content: "";
+  position: absolute;
+  left: -40px;
+  top: 26px;
+  width: 16px;
+  height: 16px;
+  background: var(--color-gold, #F4C542);
+  border: 2px solid var(--color-ink);
+  z-index: 1;
+
+  transition:
+    background-color 0.3s ease,
+    transform 0.3s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+
+/* JavaScript-controlled animation */
+
+.js .milestone::before {
+  background: var(--color-paper, #FAF9F6);
+}
+
+.js .milestone.is-active::before {
+  background: var(--color-gold, #F4C542);
+  transform: scale(1.15);
+}
+
+/* Milestone text */
+
+.milestone b {
+  display: block;
+  color: var(--color-ink);
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.milestone p {
+  margin: 8px 0 0;
+  max-width: 440px;
+  color: #555;
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+/* =========================================
+   ABOUT BUTTON — SAME STYLE AS HERO BUTTONS
+========================================= */
+
+.about-preview .about-story > .button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+
+  min-height: 48px;
+  margin-top: 28px;
+
+  text-decoration: none;
+
+  transition:
+    transform 0.2s cubic-bezier(0.3, 0.7, 0.2, 1),
+    box-shadow 0.2s cubic-bezier(0.3, 0.7, 0.2, 1),
+    background-color 0.2s ease;
+}
+
+/* Hover and keyboard focus */
+
+.about-preview .about-story > .button:hover,
+.about-preview .about-story > .button:focus-visible {
+  transform: translate(-2px, -2px);
+  box-shadow: 4px 4px 0 var(--color-ink);
+  background-color: var(--color-gold, #F4C542);
+}
+
+/* Click effect */
+
+.about-preview .about-story > .button:active {
+  transform: none;
+  box-shadow: none;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 65px;
+  }
+
+  .about-grid h2 {
+    font-size: clamp(48px, 8vw, 72px);
+  }
+
+  .about-story {
+    padding-top: 0;
+  }
+
+  .design-card {
+    max-width: 420px;
+  }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+  .about-grid {
+    gap: 52px;
+  }
+
+  .about-grid .eyebrow {
+    margin-bottom: 20px;
+    font-size: 10px;
+  }
+
+  .about-grid h2 {
+    font-size: clamp(44px, 11vw, 60px);
+  }
+
+  .gold-rule {
+    width: 65px;
+    height: 4px;
+    margin: 26px 0 40px;
+  }
+
+  .design-card {
+    min-height: 280px;
+    padding: 26px;
+    gap: 24px;
+    box-shadow: 8px 8px 0 var(--color-ink);
+  }
+
+  .design-card strong {
+    font-size: clamp(30px, 9vw, 44px);
+  }
+
+  .design-card small {
+    font-size: 10px;
+  }
+
+  .about-story .lead {
+    font-size: 25px;
+  }
+
+  .about-story > p:not(.lead) {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  /* Center the roadmap */
+
+  .about-preview .story-timeline {
+    width: 100%;
+    max-width: 340px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 34px;
+  }
+
+  .milestone::before {
+    left: -34px;
+  }
+
+  .milestone {
+    padding: 20px 0;
+  }
+
+  /* Center the More About Me button */
+
+  .about-preview .about-story > .button {
+    display: flex;
+    width: fit-content;
+    margin: 32px auto 0;
+  }
+}
+
+/* =========================================
+   ACCESSIBILITY — REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .milestone::before,
+  .about-preview .about-story > .button {
+    transition: none;
+  }
+}

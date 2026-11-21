@@ -1,0 +1,192 @@
+
+/* =========================================
+   SHARED SECTION HEADINGS
+========================================= */
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  margin-bottom: 30px;
+}
+
+.section-heading h2 {
+  margin: 0;
+}
+
+.section-heading a {
+  color: var(--color-ink);
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.section-heading a:hover {
+  color: #B18B00;
+}
+
+/* =========================================
+   FEATURED PROJECTS — SHARED SECTION TEXT
+
+   Card, carousel, and modal styles live in
+   featured-projects.css
+========================================= */
+
+.featured-projects {
+  background: var(--color-gold, #F4C542);
+}
+
+.featured-projects .section-heading {
+  margin: 20px 0;
+}
+
+.featured-projects .section-heading h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(38px, 5vw, 64px);
+  line-height: 1.1;
+  letter-spacing: -0.055em;
+}
+
+.view-all-link {
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--color-gold);
+  font-size: 14px;
+}
+
+.projects-intro {
+  max-width: 550px;
+  margin: 0 0 48px;
+  color: var(--color-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* =========================================
+   LEGACY PROJECT STYLES
+
+   Retained for other pages if needed
+========================================= */
+
+.project-art {
+  display: grid;
+  place-items: center;
+  min-height: 260px;
+  background: #E7D08A;
+  font: 600 14px var(--font-mono);
+  letter-spacing: 0.13em;
+}
+
+.project-art-alt {
+  background: #D9D9D4;
+}
+
+.project-copy {
+  padding: 24px;
+}
+
+.project-copy h3,
+.project-copy h2 {
+  margin-bottom: 10px;
+  font-size: 26px;
+}
+
+.project-copy p {
+  color: var(--color-muted);
+}
+
+.project-copy span {
+  font: 12px var(--font-mono);
+}
+
+/* =========================================
+   SHARED TINTED BACKGROUND
+
+   Used by the Skills Toolbox and
+   potentially other sections
+========================================= */
+
+.section-tinted {
+  background: #F1EEE6;
+}
+
+/* =========================================
+   LEGACY THREE-COLUMN GRID
+
+   Retained for compatibility with
+   other pages
+========================================= */
+
+.three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 35px;
+}
+
+.three-grid article {
+  padding-top: 25px;
+  border-top: 3px solid var(--color-ink);
+}
+
+.three-grid p {
+  color: var(--color-muted);
+  line-height: 1.8;
+}
+
+/* =========================================
+   INNER PAGE INTRO
+========================================= */
+
+.page-intro {
+  min-height: 55vh;
+}
+
+.page-intro h1 {
+  margin: 25px 0;
+  font-size: clamp(52px, 8vw, 110px);
+}
+
+.page-intro .section-intro {
+  margin-bottom: 35px;
+}
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 900px) {
+  .three-grid {
+    gap: 22px;
+  }
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+  .three-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .projects-intro {
+    margin-bottom: 32px;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION ACCESSIBILITY
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  .section-heading a {
+    transition: none;
+  }
+}
